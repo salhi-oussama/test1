@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50 0%, #1E7F2D 100%);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+img{
+    width: 120px;
+}
+
+.toggle {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+#nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#nav-links li {
+    margin: 0 15px;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+#nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Styling for mobile menu */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hide off-screen */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(135deg, #4CAF50 0%, #1E7F2D 100%);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease; /* Smooth transition */
+    z-index: 1000;
+}
+
+.mobile-nav.active {
+    right: 0; /* Slide in */
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mobile-nav li {
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    #nav-links {
+        display: none; /* Hide links by default */
+    }
+
+    .toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #4CAF50;
+    margin-top: 20px;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.team-member {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mission {
+    background-color: #e7f3fe;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #4CAF50 0%, #1E7F2D 100%);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.close-btn {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 15px;
+    text-align: right; /* Align to the right */
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hide off-screen */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(135deg, #4CAF50 0%, #1E7F2D 100%);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease; /* Smooth transition */
+    z-index: 1000;
+}
+
+.mobile-nav.active {
+    right: 0; /* Slide in */
+}
+
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    list-style: none;
+}
+.mobile-nav ul li a{
+    text-decoration: none;
+    color: white;
+    transition: .4s;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+.mobile-nav ul li a:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    
+}

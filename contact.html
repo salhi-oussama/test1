@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>contact</title>
+</head>
+<header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><img src="Design_sans_titre.png" alt=""></div>
+            <div class="toggle" id="toggle-button">☰</div>
+            <ul id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+</header>
+<body>
+    <section>
+        <div class="container">
+            <h2>contact</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <h3>send us a message</h3>
+                    <form action="https://formspree.io/f/xldeekqa" method="POST">
+                        <div class="form-group">
+                            <input type="temt" name="name" placeholder="your name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="your email">
+                        </div>
+                        <div class="form-group">
+                           <textarea name="message" placeholder="your message"></textarea>
+                        </div>
+                        <button type="submit">send message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>contact information</h3>
+                    <p><i class="fas fa-phone"></i>0777777777</p>
+                    <p><i class="fas fa-envelope"></i> info@example.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+const navLinks = document.createElement('div');
+navLinks.className = 'mobile-nav';
+navLinks.innerHTML = `
+    <div class="close-btn">&times;</div>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+`;
+
+toggleButton.addEventListener('click', function() {
+    if (!document.querySelector('.mobile-nav')) {
+        document.body.appendChild(navLinks);
+    }
+    navLinks.classList.toggle('active');
+});
+
+// Close the navbar when clicking the "X" button
+navLinks.querySelector('.close-btn').addEventListener('click', function() {
+    navLinks.classList.remove('active');
+    setTimeout(() => navLinks.remove(), 300); // Remove after animation
+});
+
+// Close the mobile navbar when clicking outside
+document.addEventListener('click', function(event) {
+    if (!toggleButton.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove('active');
+        setTimeout(() => {
+            if (!navLinks.classList.contains('active')) {
+                navLinks.remove(); // Remove the navbar from the DOM
+            }
+        }, 300); // Wait for the animation to finish before removing
+    }
+});
+
+// Close the navbar when clicking a link
+navLinks.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        setTimeout(() => navLinks.remove(), 300); // Remove after animation
+    }
+});
+    </script>
+</body>
+</html>
